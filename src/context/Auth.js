@@ -1,16 +1,23 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
   const [user, setUser] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (user.username) {
+      console.log("true");
+      setIsLoggedIn(true);
+    } else {
+      console.log("false");
+      setIsLoggedIn(false);
+    }
+  }, [user]);
 
   const login = (username, password) => {
-    if (username === "test") {
-      setUser({ name: username, password });
-    } else {
-      setUser({});
-    }
+    setUser({ username, password });
   };
 
   const signup = (username, password) => {
@@ -20,7 +27,7 @@ export const UserProvider = (props) => {
       password !== "" ||
       password !== null
     ) {
-      setUser({ name: username, password });
+      setUser({ username, password });
     } else {
       setUser({});
     }
@@ -31,7 +38,9 @@ export const UserProvider = (props) => {
   };
 
   return (
-    <UserContext.Provider value={{ user, setUser, login, signup, logout }}>
+    <UserContext.Provider
+      value={{ user, setUser, login, signup, logout, isLoggedIn }}
+    >
       {props.children}
     </UserContext.Provider>
   );
