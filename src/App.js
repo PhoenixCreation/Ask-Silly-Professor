@@ -4,22 +4,22 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 
 import { UserProvider } from "./context/Auth";
+import Home from "./routes/Home";
 
 function App() {
   return (
     <div className="app">
       <UserProvider>
-        <Navbar />
-        {/* <Router>
+        <Router>
+          <Navbar />
           <Switch>
             <Route path="/" exact>
+              <Home />
             </Route>
-            <Route path="/login" exact>
-            </Route>
-            <Route path="/signup" exact>
-            </Route>
+            <Route path="/login" exact></Route>
+            <Route path="/signup" exact></Route>
           </Switch>
-        </Router> */}
+        </Router>
       </UserProvider>
     </div>
   );
