@@ -1,0 +1,38 @@
+.left__eye,
+.right__eye {
+  animation: eyeball 3s linear infinite alternate;
+}
+@keyframes eyeball {
+  0% {
+    transform: translate(-10px, 10px);
+  }
+  20% {
+    transform: translate(-10px, 10px);
+  }
+  60% {
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+.specs {
+  animation: specs 6s ease infinite alternate;
+}
+@keyframes specs {
+  0% {
+    transform: translate(0px, -10px);
+  }
+  10% {
+    transform: translate(0px, 0px);
+  }
+  90% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, -10px);
+  }
+}
