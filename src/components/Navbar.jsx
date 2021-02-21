@@ -1,5 +1,6 @@
 import React,{ useContext, useState } from 'react'
 import { UserContext } from '../context/Auth'
+import { Link } from "react-router-dom"
 import "../css/components/navbar.css"
 
 const Navbar = () => {
@@ -31,9 +32,9 @@ const Navbar = () => {
             <div className="navbar__left">
                 <div className="navbar__left__heading">
                     <div className="navbar__left__heading__icon">
-                        <img src="https://picsum.photos/200" alt="Random image failed"/>
+                        <img src="https://picsum.photos/200" alt="Random pic failed"/>
                     </div>
-                    <div className="navbar__left__heading__title">Ask Silly Professor</div>
+                    <Link to="/" className="navbar__left__heading__title">Ask Silly Professor</Link>
                 </div>
                 <div className="navbar__left__options">
                     <div className="navbar__left__option active">Home</div>
@@ -44,7 +45,7 @@ const Navbar = () => {
             <div className="navbar__search__cont">
                 <form action="/search" onSubmit={handleSearch} className="navbar__search__form" >
                     <input type="text" placeholder="Search anything..." className="navbar__search__field" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-                    <button type="submit" className="btn">🔍</button>
+                    <button type="submit" className="navbar__search__button btn">🔍</button>
                 </form>
             </div>
             {
@@ -55,21 +56,17 @@ const Navbar = () => {
                     </div>
                 ) : (
                     <div className="navbar__right">
-                        <button className="navbar__right__logout btn" onClick={handleLogout}>Log Out</button>
                         <div className="navbar__right__user__cont">
                             <img src="https://picsum.photos/200?random=2" alt="user avatar to be shown here"/>
+                            <div className="navbar__user__options">
+                                <Link to="/profile" className="navbar__user__option">Profile</Link>
+                                <button onClick={handleLogout} className="navbar__user__option">Log out</button>
+                                <Link to="/help" className="navbar__user__option">Help</Link>
+                            </div>
                         </div>
                     </div>
                 )
             }
-            <div className="navbar__theme__toggler">
-                <label htmlFor="theme__toggler">
-                    <input type="checkbox" name="theme" id="theme__toggler"/>
-                    <div className="theme__toggler__bg">
-                        <div className="theme__toggler__image"></div>
-                    </div>
-                </label>
-            </div>
         </div>
     )
 }
