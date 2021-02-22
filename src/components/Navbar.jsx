@@ -1,10 +1,29 @@
-import React,{ useContext, useState } from 'react'
+import React,{ useContext, useState, useEffect } from 'react'
 import { UserContext } from '../context/Auth'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import "../css/components/navbar.css"
 
 const Navbar = () => {
     const { user, isLoggedIn, login, signup, logout } = useContext(UserContext);
+
+    const location = useLocation()
+
+    const [currentPage, setCurrentPage] = useState("home")
+
+    useEffect(() => {
+        if (location.pathname === "/") {
+            setCurrentPage("home")
+        }
+        else if(location.pathname.includes("explore")){
+            setCurrentPage("explore")
+        }
+        else if(location.pathname.includes("forum")){
+            setCurrentPage("forum")
+        }
+        else{
+            setCurrentPage(location.pathname)
+        }
+    },[location])
 
     const [searchQuery, setSearchQuery] = useState("")
 
@@ -37,9 +56,9 @@ const Navbar = () => {
                     <Link to="/" className="navbar__left__heading__title">Ask Silly Professor</Link>
                 </div>
                 <div className="navbar__left__options">
-                    <div className="navbar__left__option active">Home</div>
-                    <div className="navbar__left__option">Explore</div>
-                    <div className="navbar__left__option">Forum</div>
+                    <Link to="/" className={currentPage === "home" ? "navbar__left__option active" : "navbar__left__option"}>Home</Link>
+                    <Link to="/explore" className={currentPage === "explore" ? "navbar__left__option active" : "navbar__left__option"}>Explore</Link>
+                    <Link to="/forum" className={currentPage === "forum" ? "navbar__left__option active" : "navbar__left__option"}>Forum</Link>
                 </div>
             </div>
             <div className="navbar__search__cont">
