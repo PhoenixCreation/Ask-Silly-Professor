@@ -1,6 +1,6 @@
 .left__eye,
 .right__eye {
-  animation: eyeball 3s linear infinite alternate;
+  animation: eyeball 2s linear infinite alternate;
 }
 @keyframes eyeball {
   0% {
@@ -20,7 +20,7 @@
   }
 }
 .specs {
-  animation: specs 6s ease infinite alternate;
+  animation: specs 4s ease-in-out infinite alternate;
 }
 @keyframes specs {
   0% {

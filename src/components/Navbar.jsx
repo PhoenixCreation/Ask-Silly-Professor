@@ -71,7 +71,7 @@ const Navbar = () => {
                 isLoggedIn === false ? (
                     <div className="navbar__right">
                         <button className="navbar__right__login btn" onClick={handleLogin}>Login</button>
-                        <button className="navbar__right__signup btn" onClick={handleSignup}>Sign Up</button>
+                        <button className="navbar__right__signup btn" onClick={handleSignup}>Signup</button>
                     </div>
                 ) : (
                     <div className="navbar__right">
