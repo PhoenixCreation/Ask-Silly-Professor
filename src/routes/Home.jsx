@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import {Link} from "react-router-dom"
 import DegreeCap from '../components/svgs/DegreeCap'
+import Knowledge from '../components/svgs/Knowledge'
 import SillyProfessor from '../components/svgs/SillyProfessor'
 import "../css/routes/home.css"
 
@@ -36,7 +37,6 @@ const Home = () => {
             <div className="home__second__cont">
                 <div className="home__second">
                     <div className="home__second__left">
-                        {/* Add svg of scholarship cap here */}
                         <DegreeCap className="home__second__degreecap" />
                     </div>
                     <div className="home__second__right">
@@ -54,19 +54,18 @@ const Home = () => {
                 </div>
                 <div className="home__second">
                     <div className="home__second__left">
-                        {/* Add svg of scholarship cap here */}
                         <DegreeCap className="home__second__degreecap" />
                     </div>
                     <div className="home__second__right">
                         <h2 className="home__second__right__heading">
-                            Show your knowledge in your topic
+                            Gain knowledge by asking Questions
                         </h2>
                         <div className="home__second__right__details">
-                            Find the topic you think you are good in and surf the questions and discussions or
-                            start a new question or discussion. Make sure you have handy proof of whta you are saying. keep learning.
+                            When you ask questions and find answers you remember it better then anything. Also answering 
+                            others questions answer will also make you little better in that topic each time you answer something.
                         </div>
                         <Link to="/explore" className="btn home__second__right__explore">
-                            Explore
+                            Questions
                         </Link>
                     </div>
                 </div>

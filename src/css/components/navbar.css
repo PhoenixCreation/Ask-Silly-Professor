@@ -39,6 +39,7 @@
   margin-left: 10px;
   font-weight: 700;
   font-family: inherit;
+  color: black;
 }
 .navbar__left__options {
   display: flex;
@@ -52,6 +53,7 @@
   font-size: 22px;
   margin-right: 20px;
   cursor: pointer;
+  color: black;
 }
 .navbar__left__option.active {
   font-weight: 700;

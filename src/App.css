@@ -2,7 +2,9 @@
   height: 100vh;
   width: 100%;
 }
-
+a {
+  all: initial;
+}
 /* Common elements */
 .btn {
   all: initial;
