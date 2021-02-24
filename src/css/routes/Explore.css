@@ -1,0 +1,13 @@
+.explore {
+  display: flex;
+  flex-direction: row;
+}
+.explore__self {
+  width: 300px;
+}
+.explore__main {
+  flex: 1;
+}
+.explore__suggested {
+  width: 200px;
+}

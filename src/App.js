@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 
 import { UserProvider } from "./context/Auth";
+import Explore from "./routes/Explore";
 import Home from "./routes/Home";
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <Home />
+            </Route>
+            <Route path="/explore" exact>
+              <Explore />
             </Route>
             <Route path="/login" exact></Route>
             <Route path="/signup" exact></Route>
