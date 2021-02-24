@@ -1,9 +1,23 @@
 .explore {
   display: flex;
   flex-direction: row;
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(../../Images/Svgs/background.svg);
 }
 .explore__self {
   width: 300px;
+  padding: 30px;
+}
+.explore__self__cont {
+  height: 100%;
+  border: 2px solid red;
+  border-radius: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  backdrop-filter: blur(40px);
 }
 .explore__main {
   flex: 1;
